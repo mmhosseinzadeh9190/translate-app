@@ -8,5 +8,68 @@
     <script defer src="script.js"></script>
     <title>Translate App</title>
   </head>
-  <body></body>
+  <body>
+    <img class="logo" src="images/logo.svg" alt="logo" />
+    <div class="container">
+      <div class="text-box text-box--input">
+        <ul class="nav-pills">
+          <li class="nav-item">Detect Language</li>
+          <li class="nav-item nav-item--active">English</li>
+          <li class="nav-item">Persian</li>
+          <li class="nav-item dropdown">
+            <img class="icon dropdown__icon" src="images/arrow-down.svg" alt="icon" />
+            <ul class="dropdown__menu">
+              <li class="dropdown__item">French</li>
+              <li class="dropdown__item">Spanish</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="text-area-container">
+          <textarea class="text-area" name="text" id="input-text" autofocus>Hello, How are you?</textarea>
+          <span class="letters-limit"><span class="letters">19</span> / 500</span>
+        </div>
+        <div class="action-box">
+          <span class="icon-box">
+            <img class="icon" src="images/volume-high.svg" alt="icon" />
+          </span>
+          <span class="icon-box">
+            <img class="icon" src="images/copy.svg" alt="icon" />
+          </span>
+          <button class="btn" type="button">
+            <img class="icon" src="images/translate.svg" alt="icon" />
+            Translate
+          </button>
+        </div>
+      </div>
+      <div class="text-box text-box--output">
+        <ul class="nav-pills">
+          <li class="nav-item">English</li>
+          <li class="nav-item nav-item--active">Persian</li>
+          <li class="nav-item dropdown">
+            <img class="icon dropdown__icon" src="images/arrow-down.svg" alt="icon" />
+            <ul class="dropdown__menu">
+              <li class="dropdown__item">French</li>
+              <li class="dropdown__item">Spanish</li>
+            </ul>
+          </li>
+          <li class="nav-icon">
+            <span class="icon-box">
+              <img class="icon" src="images/arrow-swap-horizontal.svg" alt="icon" />
+            </span>
+          </li>
+        </ul>
+        <div class="text-area-container">
+          <textarea class="text-area" name="text" id="output-text" readonly>Bonjour, comment allez-vous?</textarea>
+        </div>
+        <div class="action-box">
+          <span class="icon-box">
+            <img class="icon" src="images/volume-high.svg" alt="icon" />
+          </span>
+          <span class="icon-box">
+            <img class="icon" src="images/copy.svg" alt="icon" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
