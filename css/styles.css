@@ -16,6 +16,21 @@ html {
   box-sizing: inherit;
 }
 
+*:focus {
+  outline: 4px dotted #f9fafb;
+  outline-offset: 4px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+*::selection {
+  background-color: #0b6b0e;
+  color: #f9fafb;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
@@ -119,7 +134,7 @@ body {
   border: none;
   overflow: auto;
   outline: none;
-  width: 100%;
+  width: 90%;
   height: 20rem;
   font: inherit;
   color: inherit;
@@ -139,7 +154,7 @@ body {
 
 .action-box {
   display: flex;
-  gap: 0.8rem;
+  gap: 1.2rem;
   align-items: flex-end;
 }
 
@@ -159,6 +174,12 @@ body {
 
 .icon-box:hover {
   background-color: rgba(249, 250, 251, 0.3);
+}
+
+.icon-box--text-area {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .btn {
