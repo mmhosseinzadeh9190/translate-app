@@ -5,7 +5,10 @@ const dropdownIcon = document.querySelectorAll(".dropdown__icon");
 const dropdownMenu = document.querySelectorAll(".dropdown__menu");
 const textarea = document.querySelectorAll(".text-area");
 const textareaIcon = document.querySelector(".icon-box--text-area");
+const inputText = document.getElementById("input-text");
+const outputText = document.getElementById("output-text");
 
+// dropdown functionality
 window.addEventListener("click", function (e) {
   for (let i = 0; i < dropdown.length; i++) {
     if (e.target === dropdown[i] || e.target === dropdownIcon[i]) {
@@ -21,3 +24,8 @@ window.addEventListener("click", function (e) {
     }
   }
 });
+
+// places cursor at the end of input text
+const len = inputText.value.length;
+inputText.scrollTop = 9999;
+inputText.setSelectionRange(len, len);
