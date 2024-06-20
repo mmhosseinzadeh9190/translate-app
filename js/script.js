@@ -103,3 +103,20 @@ window.addEventListener("load", function () {
 //     })
 //     .catch(() => alert("Sorry, Could not get translatable languages!\nPlease check your internet connection then reload the page, Otherwise you will not be able to use the translator."));
 // });
+
+// changing the direction of the input and output text based on the selected language
+const renderTextDir = function () {
+  const inputLang = inputNav.querySelector(".nav-item--active").textContent;
+  const outputLang = outputNav.querySelector(".nav-item--active").textContent;
+  if (outputLang === "Persian" || outputLang === "Arabic") {
+    outputText.style.direction = "rtl";
+  } else {
+    outputText.style.direction = "ltr";
+  }
+  if (inputLang === "Persian" || inputLang === "Arabic") {
+    inputText.style.direction = "rtl";
+  } else {
+    inputText.style.direction = "ltr";
+  }
+};
+renderTextDir();
