@@ -217,9 +217,6 @@ body {
   right: 0;
 }
 
-.letters {
-}
-
 .action-box {
   display: flex;
   gap: 1.2rem;
@@ -242,6 +239,10 @@ body {
 
 .icon-box:hover {
   background-color: rgba(249, 250, 251, 0.3);
+}
+
+.icon-mt {
+  margin-top: 0.883rem;
 }
 
 .icon-box--text-area {
