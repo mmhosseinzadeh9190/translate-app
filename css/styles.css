@@ -155,7 +155,7 @@ body {
   row-gap: 1.2rem;
   transform: translateY(4rem);
   transition: all 0.2s;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .show {
@@ -179,6 +179,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.4rem;
+  white-space: nowrap;
 }
 
 .nav-icon {

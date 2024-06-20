@@ -12,63 +12,64 @@
     <img class="logo" src="images/logo.svg" alt="logo" />
     <div class="container">
       <div class="text-box text-box--input">
-        <ul class="nav-pills">
-          <li class="nav-item">Detect Language</li>
+        <ul class="nav-pills" id="input-nav">
           <li class="nav-item nav-item--active">English</li>
           <li class="nav-item">Persian</li>
+          <li class="nav-item">German</li>
           <li class="nav-item dropdown">
             <img class="icon dropdown__icon" src="images/arrow-down.svg" alt="icon" />
-            <ul class="dropdown__menu">
+            <ul class="dropdown__menu" id="input-dropdown-menu">
               <li class="dropdown__item"><span class="dropdown__content">French</span></li>
               <li class="dropdown__item"><span class="dropdown__content">Spanish</span></li>
             </ul>
           </li>
         </ul>
-        <div class="text-area-container">
-          <textarea class="text-area" name="text" id="input-text" autofocus>Hello, How are you?</textarea>
-          <span class="icon-box icon-box--text-area" tabindex="1">
+        <div class="text-area-container" id="text-area-container-input">
+          <textarea class="text-area" name="text" id="input-text" maxlength="499" autofocus></textarea>
+          <span class="icon-box icon-box--text-area btn-delete" tabindex="1">
             <img class="icon" src="images/delete.svg" alt="icon" />
           </span>
-          <span class="letters-limit"><span class="letters">19</span> / 500</span>
+          <span class="letters-limit"><span class="letters">0</span> / 499</span>
         </div>
         <div class="action-box">
-          <span class="icon-box" tabindex="1">
+          <!-- <span class="icon-box btn-sound" tabindex="1">
             <img class="icon" src="images/volume-high.svg" alt="icon" />
-          </span>
-          <span class="icon-box" tabindex="1">
+          </span> -->
+          <span class="icon-box btn-copy" tabindex="1">
             <img class="icon" src="images/copy.svg" alt="icon" />
           </span>
-          <button class="btn" type="button">
-            <img class="icon" src="images/translate.svg" alt="icon" />
+          <button class="btn btn-translate" type="button">
+            <!-- <img class="icon" src="images/translate.svg" alt="icon" /> -->
             Translate
           </button>
         </div>
       </div>
       <div class="text-box text-box--output">
-        <ul class="nav-pills">
+        <ul class="nav-pills" id="output-nav">
           <li class="nav-item">English</li>
           <li class="nav-item nav-item--active">Persian</li>
+          <li class="nav-item">German</li>
           <li class="nav-item dropdown">
             <img class="icon dropdown__icon" src="images/arrow-down.svg" alt="icon" />
-            <ul class="dropdown__menu">
+            <ul class="dropdown__menu" id="output-dropdown-menu">
               <li class="dropdown__item"><span class="dropdown__content">French</span></li>
               <li class="dropdown__item"><span class="dropdown__content">Spanish</span></li>
             </ul>
           </li>
           <li class="nav-icon">
-            <span class="icon-box" tabindex="1">
+            <span class="icon-box btn-swap" tabindex="1">
               <img class="icon" src="images/arrow-swap-horizontal.svg" alt="icon" />
             </span>
           </li>
         </ul>
-        <div class="text-area-container">
-          <textarea class="text-area" name="text" id="output-text" readonly>Bonjour, comment allez-vous?</textarea>
+        <div class="text-area-container" id="text-area-container-output">
+          <textarea class="text-area" name="text" id="output-text" readonly></textarea>
         </div>
         <div class="action-box">
-          <span class="icon-box" tabindex="1">
+          <!-- <span class="icon-box btn-sound" tabindex="1">
             <img class="icon" src="images/volume-high.svg" alt="icon" />
-          </span>
-          <span class="icon-box" tabindex="1">
+          </span> -->
+          <span class="icon-box btn-copy" tabindex="1">
             <img class="icon" src="images/copy.svg" alt="icon" />
           </span>
         </div>
