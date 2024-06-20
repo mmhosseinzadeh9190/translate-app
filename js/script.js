@@ -159,3 +159,41 @@ for (let i = 0; i < navPills.length; i++) {
     }
   });
 }
+
+// getting translated text from API
+btnTranslate.addEventListener("click", function () {
+  const inputTextValue = inputText.value;
+  const inputLang = inputNav.querySelector(".nav-item--active").textContent;
+  const outputLang = outputNav.querySelector(".nav-item--active").textContent;
+  let inputLangCode;
+  let outputLangCode;
+  supportedLanguages.forEach((language) => {
+    if (language.langName === inputLang) {
+      inputLangCode = language.langIsoCode;
+    }
+    if (language.langName === outputLang) {
+      outputLangCode = language.langIsoCode;
+    }
+  });
+  if (inputLang === "English") {
+    inputLangCode = "en";
+  }
+  if (inputLang === "Persian") {
+    inputLangCode = "fa";
+  }
+  if (outputLang === "English") {
+    outputLangCode = "en";
+  }
+  if (outputLang === "Persian") {
+    outputLangCode = "fa";
+  }
+  fetch(`https://api.mymemory.translated.net/get?q=${inputTextValue}!&langpair=${inputLangCode}|${outputLangCode}`)
+    .then((response) => {
+      if (!response.ok) throw new Error();
+      return response.json();
+    })
+    .then((data) => {
+      outputText.value = data.responseData.translatedText;
+    })
+    .catch(() => (outputText.value = "Translation error, Try again!"));
+});
