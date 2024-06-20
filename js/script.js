@@ -259,3 +259,13 @@ btnSwap.addEventListener("click", function () {
     }
   }
 });
+
+// the limit of the number of written letters
+const lettersCounter = function () {
+  letters.textContent = inputText.value.length;
+};
+lettersCounter();
+const keys = ["keyup", "keypress", "keydown"];
+for (const key of keys) {
+  window.addEventListener(key, lettersCounter);
+}
