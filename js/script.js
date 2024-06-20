@@ -63,3 +63,43 @@ const placeCursorAtEnd = function () {
   inputText.setSelectionRange(len, len);
 };
 placeCursorAtEnd();
+
+// getting translatable languages from supported languages array on page loading
+window.addEventListener("load", function () {
+  supportedLanguages.sort().reverse();
+  dropdownMenu.forEach((menu) => {
+    menu.innerHTML = "";
+    supportedLanguages.forEach((language) => {
+      menu.insertAdjacentHTML("afterbegin", `<li class="dropdown__item"><span class="dropdown__content">${language.langName}</span></li>`);
+    });
+  });
+});
+
+// in case if you wanted to get translatable languages from API on page loading
+// const langIsoCode = [];
+// const langName = [];
+// window.addEventListener("load", function () {
+//   fetch(`https://restcountries.com/v3.1/all?fields=languages`)
+//     .then((response) => {
+//       if (!response.ok) throw new Error();
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then((data) => {
+//       data.forEach((country) => {
+//         for (const [key, value] of Object.entries(country?.languages)) {
+//           langIsoCode.push(key.slice(0, 2));
+//           langName.push(value);
+//         }
+//       });
+//       const uniqueLangIsoCode = [...new Set(langIsoCode)];
+//       const uniqueLangName = [...new Set(langName)];
+//       dropdownMenu.forEach((menu) => {
+//         menu.innerHTML = "";
+//         uniqueLangName.forEach((item) => {
+//           menu.insertAdjacentHTML("afterbegin", `<li class="dropdown__item"><span class="dropdown__content">${item}</span></li>`);
+//         });
+//       });
+//     })
+//     .catch(() => alert("Sorry, Could not get translatable languages!\nPlease check your internet connection then reload the page, Otherwise you will not be able to use the translator."));
+// });
