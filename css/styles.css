@@ -77,8 +77,8 @@ body {
 
 .text-box {
   background-color: rgba(249, 250, 251, 0.3);
-  -webkit-backdrop-filter: blur(3.2rem);
-  backdrop-filter: blur(3.2rem);
+  /* -webkit-backdrop-filter: blur(3.2rem);
+  backdrop-filter: blur(3.2rem); */
   width: 50%;
   padding: 2.4rem;
   border: 1px solid rgba(249, 250, 251, 0.3);
@@ -219,8 +219,8 @@ body {
 
 .action-box {
   display: flex;
-  gap: 1.2rem;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 .icon {
@@ -259,7 +259,6 @@ body {
 }
 
 .btn {
-  margin-left: auto;
   border: none;
   border-radius: 1.2rem;
   display: flex;
@@ -275,4 +274,149 @@ body {
 
 .btn:hover {
   background-color: #0b6b0e;
+}
+
+@media only screen and (min-width: 120em) {
+  body {
+    font-size: 2.4rem;
+  }
+
+  .logo {
+    width: 38rem;
+  }
+
+  .icon {
+    width: 2.2rem;
+  }
+
+  .icon-box {
+    border-radius: 1.6rem;
+    padding: 1.2rem;
+  }
+
+  .icon-mt {
+    margin-top: 0.968rem;
+  }
+
+  .dropdown__menu {
+    transform: translateY(4.6rem);
+    overflow-y: scroll;
+  }
+
+  .dropdown__content {
+    font-size: 1.8rem;
+  }
+
+  .letters-limit {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 90em) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  .logo {
+    width: 30rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .icon {
+    width: 1.8rem;
+  }
+
+  .icon-box {
+    border-radius: 1.4rem;
+  }
+
+  .icon-mt {
+    margin-top: 0.933rem;
+  }
+
+  .text-box {
+    width: 100%;
+  }
+
+  .dropdown__menu {
+    transform: translateY(4.1rem);
+    overflow-y: scroll;
+  }
+
+  .dropdown__content {
+    font-size: 1.6rem;
+  }
+
+  .letters-limit {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .logo {
+    width: 28rem;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .text-box {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 33.5em) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    width: 26rem;
+  }
+
+  .icon-box--text-area {
+    bottom: -5.44rem;
+    left: 5.2rem;
+    top: unset;
+    right: unset;
+  }
+
+  .text-box {
+    padding: 1.6rem;
+    border-radius: 2.4rem;
+  }
+
+  .nav-pills {
+    gap: 1.2rem;
+  }
+
+  .nav-icon {
+    position: absolute;
+    bottom: -31rem;
+    left: 5.2rem;
+  }
+
+  .text-area {
+    width: 100%;
+    padding: 0 0.8rem;
+  }
+
+  .dropdown__menu {
+    padding: 1.2rem;
+    border-radius: 0 0 2rem 2rem;
+    grid-template-columns: repeat(2, 48%);
+    column-gap: 4%;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 24.25em) {
+  .nav-pills {
+    flex-direction: column;
+  }
 }
