@@ -120,3 +120,42 @@ const renderTextDir = function () {
   }
 };
 renderTextDir();
+
+// getting selected languages for translator input and output from dropdown menu
+for (let i = 0; i < dropdownMenu.length; i++) {
+  dropdownMenu[i].addEventListener("click", function (e) {
+    if (e.target.classList.contains("dropdown__content") || e.target.classList.contains("dropdown__item")) {
+      const selectedLang = e.target.textContent;
+      const lastChildText = navPills[i].children[2].textContent;
+      const lastChild = navPills[i].children[2];
+      lastChild.textContent = selectedLang;
+      const activeItem = navPills[i].querySelector(".nav-item--active");
+      activeItem.classList.remove("nav-item--active");
+      navPills[i].children[2].classList.add("nav-item--active");
+      if (navPills[0].querySelector(".nav-item--active").textContent === navPills[1].querySelector(".nav-item--active").textContent) {
+        alert("Sorry, The input and output language cannot be the same");
+        lastChild.textContent = lastChildText;
+        navPills[i].children[2].classList.remove("nav-item--active");
+        activeItem.classList.add("nav-item--active");
+      }
+      renderTextDir();
+    }
+  });
+}
+
+// adding active class to selected language from navigation
+for (let i = 0; i < navPills.length; i++) {
+  navPills[i].addEventListener("click", function (e) {
+    if (e.target.classList.contains("nav-item") && !e.target.classList.contains("dropdown")) {
+      const activeItem = navPills[i].querySelector(".nav-item--active");
+      activeItem.classList.remove("nav-item--active");
+      e.target.classList.add("nav-item--active");
+      if (navPills[0].querySelector(".nav-item--active").textContent === navPills[1].querySelector(".nav-item--active").textContent) {
+        alert("Sorry, The input and output language cannot be the same");
+        activeItem.classList.add("nav-item--active");
+        e.target.classList.remove("nav-item--active");
+      }
+      renderTextDir();
+    }
+  });
+}
