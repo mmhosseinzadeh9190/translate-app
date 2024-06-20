@@ -197,3 +197,27 @@ btnTranslate.addEventListener("click", function () {
     })
     .catch(() => (outputText.value = "Translation error, Try again!"));
 });
+
+// delete button functionality
+btnDelete.addEventListener("click", function () {
+  inputText.value = "";
+  inputText.focus();
+  lettersCounter();
+});
+
+// sound button functionality
+
+// copy button functionality
+for (let i = 0; i < btnCopy.length; i++) {
+  btnCopy[i].addEventListener("click", function () {
+    if (i === 0) {
+      inputText.select();
+      navigator.clipboard.writeText(inputText.value);
+    }
+    if (i === 1) {
+      outputText.select();
+      navigator.clipboard.writeText(outputText.value);
+    }
+    alert("Text copied successfully");
+  });
+}
