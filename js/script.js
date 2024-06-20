@@ -221,3 +221,41 @@ for (let i = 0; i < btnCopy.length; i++) {
     alert("Text copied successfully");
   });
 }
+
+// swap button functionality
+btnSwap.addEventListener("click", function () {
+  const nav1ItemActive = inputNav.querySelector(".nav-item--active").textContent;
+  const nav2ItemActive = outputNav.querySelector(".nav-item--active").textContent;
+  inputNav.querySelector(".nav-item--active").classList.remove("nav-item--active");
+  outputNav.querySelector(".nav-item--active").classList.remove("nav-item--active");
+  const nav1Items = inputNav.querySelectorAll(".nav-item");
+  const nav2Items = outputNav.querySelectorAll(".nav-item");
+  const menu1Item = inputDropdownMenu.querySelectorAll(".dropdown__item");
+  const menu2Item = outputDropdownMenu.querySelectorAll(".dropdown__item");
+  for (const item of nav1Items) {
+    if (item.textContent === nav2ItemActive) {
+      item.classList.add("nav-item--active");
+    }
+    if (item.textContent !== nav2ItemActive) {
+      for (const item of menu1Item) {
+        if (item.textContent === nav2ItemActive) {
+          inputNav.children[2].textContent = item.textContent;
+          item.classList.add("nav-item--active");
+        }
+      }
+    }
+  }
+  for (const item of nav2Items) {
+    if (item.textContent === nav1ItemActive) {
+      item.classList.add("nav-item--active");
+    }
+    if (item.textContent !== nav1ItemActive) {
+      for (const item of menu2Item) {
+        if (item.textContent === nav1ItemActive) {
+          outputNav.children[2].textContent = item.textContent;
+          item.classList.add("nav-item--active");
+        }
+      }
+    }
+  }
+});
