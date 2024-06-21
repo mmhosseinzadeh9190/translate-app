@@ -63,6 +63,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 6.4rem;
+  padding: 3.2rem 0;
 }
 
 .logo {
